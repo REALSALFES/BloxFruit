@@ -1,6 +1,6 @@
 
 local u5 = require(game:GetService("Players").LocalPlayer.PlayerGui.Main.UIController.Inventory.Spritesheets)
-print("work")
+
 local Data = {
    Image  = {} ,
    Inventorys = {
