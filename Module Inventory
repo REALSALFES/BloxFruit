@@ -1,6 +1,5 @@
 
 local u5 = require(game:GetService("Players").LocalPlayer.PlayerGui.Main.UIController.Inventory.Spritesheets)
-
 local Data = {
    Image  = {} ,
    Inventorys = {} ,
@@ -17,14 +16,9 @@ function Data.Add(Item)
 
    for i ,v in pairs(u5) do 
       if i == Item then 
-         while true do 
-            local I , V = pairs(v) ;
-         
-            local I1 , V1  = I(V) ;
-   
-            D[I1] = V1 
-            break
-         end
+		for i2 ,v2 in pairs(v) do 
+			D[i2] = v2 
+		end
       end
    end
 
@@ -38,7 +32,7 @@ function Data.Add(Item)
 
          i = i:split("2.png")[1];
       end 
-	  
+
       Bag.Value[i] = {
          Index = Item ,
          Value = {
