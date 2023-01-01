@@ -27,13 +27,9 @@ function Data.Add(Item)
 
    local text = nil ;
    for i ,v in pairs(D) do 
+      if i:match("2.png") then continue end 
       if i:match("1.png") then 
-
          i = i:split("1.png")[1];
-
-      elseif i:match("2.png") then 
-
-         i = i:split("2.png")[1];
       end 
 
       Bag.Value[i] = {
