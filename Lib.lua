@@ -54,6 +54,11 @@ do -- Funcs ;
         return Results 
     end ;
 
+    function Funcs.Remote(args) 
+        wait(.25) ;
+        return game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(args) ;
+    end ;
+
 end ;
 
 function modules.new(Func,...) 
@@ -63,5 +68,4 @@ function modules.new(Func,...)
 end ;
 
 return modules ; 
-
 
