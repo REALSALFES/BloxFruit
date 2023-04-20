@@ -2,6 +2,7 @@ local Modules = {
     File = "ServerHop.json" ,
     List = {} 
 } ;
+local HopStart = false ;
 local HttpService = game:GetService("HttpService")
 
 function Modules.SaveSetting() 
@@ -42,6 +43,8 @@ end ;
 
 function Modules.new() 
     while true do task.wait() 
+        if HopStart then continue end 
+        HopStart = true ;
         local Error = game.CoreGui.RobloxPromptGui.promptOverlay:FindFirstChild("ErrorPrompt") ;
 
         if not Error or ( Error and Error.TitleFrame.ErrorTitle.Text == "Teleport Failed" ) then 
