@@ -46,12 +46,12 @@ function Modules.new()
         if HopStart then continue end 
         HopStart = true ;
         local Error = game.CoreGui.RobloxPromptGui.promptOverlay:FindFirstChild("ErrorPrompt") ;
-
-        if not Error or ( Error and Error.TitleFrame.ErrorTitle.Text == "Teleport Failed" ) then 
-            Modules.HopServer()
-        else
-            continue
-        end ;
+         Modules.HopServer()
+--         if not Error or ( Error and Error.TitleFrame.ErrorTitle.Text == "Teleport Failed" ) then 
+--             Modules.HopServer()
+--         else
+--             continue
+--         end ;
     end ;
 end ;
 
