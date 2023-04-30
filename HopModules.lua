@@ -6,6 +6,9 @@ local HopStart = false ;
 local HttpService = game:GetService("HttpService")
 
 function Modules.SaveSetting() 
+    if not isfolder("Private") then 
+       makefolder("Private") ;     
+    end
     return writefile("Private/"..Modules.File,game:GetService("HttpService"):JSONEncode(Modules))  ;
 end ;
 
