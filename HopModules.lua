@@ -5,6 +5,9 @@ local Modules = {
 local HopStart = false ;
 local HttpService = game:GetService("HttpService")
 
+if not isfolder("Private") then 
+   makefolder("Private") ;     
+end
 function Modules.SaveSetting() 
     if not isfolder("Private") then 
        makefolder("Private") ;     
@@ -13,9 +16,6 @@ function Modules.SaveSetting()
 end ;
 
 function Modules.LoadSetting() 
-    if not isfolder("Private") then 
-       makefolder("Private") ;     
-    end
     if not pcall(function() readfile("Private/"..Modules.File) end) then
         writefile("Private/"..Modules.File,game:GetService("HttpService"):JSONEncode({Modules.List})) ;
         return HttpService:JSONDecode(readfile("Private/"..Modules.List))  ;
